@@ -1,12 +1,15 @@
-﻿using System;
-
-namespace dotnet_mongodb
+﻿namespace dotnet_mongodb
 {
-    class Program
+  class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+      var person = new Person{
+        FirstName = "Lone", 
+        LastName = "Ranger"
+      }; 
+      MongoCRUD database = new MongoCRUD("AddressBook");
+      database.Insert("Persons", person);
     }
+  }
 }
