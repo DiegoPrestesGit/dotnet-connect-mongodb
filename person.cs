@@ -1,8 +1,13 @@
+using System;
+using MongoDB.Bson.Serialization.Attributes;
 namespace dotnet_mongodb
 {
-    public class Person
+  public class Person
   {
-     public string FirstName { get; set; }
-     public string LastName { get; set; }
+    [BsonId]
+    public Guid Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public Address LivinPlace { get; set; }
   }
 }
