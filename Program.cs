@@ -6,21 +6,11 @@ namespace dotnet_mongodb
   {
     static void Main(string[] args)
     {
-      Address address = new Address
-      {
-        State = "Stating around",
-        Street = "United Streets of New Orleans"
-      };
-
-      Person person = new Person
-      {
-        FirstName = "Lone", 
-        LastName = "Ranger",
-        LivinPlace = address
-      };
-
       MongoCRUD database = new MongoCRUD("AddressBook");
-      database.Insert("Persons", person);
+      CRUDService service = new CRUDService();
+
+      service.InsertDatabase(database, service);
+
       Console.WriteLine("GET DOWN TO IT");
     }
   }
