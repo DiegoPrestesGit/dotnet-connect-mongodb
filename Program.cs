@@ -6,10 +6,15 @@ namespace dotnet_mongodb
   {
     static void Main(string[] args)
     {
-      MongoCRUD database = new MongoCRUD("AddressBook");
       CRUDService service = new CRUDService();
 
-      service.InsertDatabase(database, service);
+      // service.InsertData(service);
+      var collectedData = service.ReadData();
+
+      // foreach(var data in collectedData)
+      // {
+      //   Console.WriteLine($"{data.FirstName} : {data.FirstName}");
+      // }
 
       Console.WriteLine("GET DOWN TO IT");
     }

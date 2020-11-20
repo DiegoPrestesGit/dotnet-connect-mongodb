@@ -7,10 +7,8 @@ namespace dotnet_mongodb
     public class MongoCRUD
   {
     private IMongoDatabase db;
-
-    public MongoCRUD(string database)
-    {
-      // connecting to database
+    public MongoCRUD(string database) // constructor connecting to database
+    { 
       var client = new MongoClient();
       db = client.GetDatabase(database);
     }

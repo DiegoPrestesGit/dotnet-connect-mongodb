@@ -1,9 +1,12 @@
 using System;
+using System.Collections.Generic;
 
 namespace dotnet_mongodb
 {
   public class CRUDService
   {
+    private MongoCRUD database = new MongoCRUD("AddressBook");
+
     public Person InsertExample()
     {
       Address address = new Address
@@ -14,19 +17,24 @@ namespace dotnet_mongodb
 
       Person person = new Person
       {
-        FirstName = "Simple", 
-        LastName = "Man",
+        FirstName = "New",
+        LastName = "Test",
         LivinPlace = address
       };
 
       return person;
     }
 
-    public void InsertDatabase(MongoCRUD database, CRUDService service)
+    public void InsertData(CRUDService service)
     {
       Person person = service.InsertExample();
-
       database.Insert("Persons", person);
+    }
+
+    public List<Person> ReadData()
+    {
+      var collection = database.Read<Person>("Persons");
+      return collection;
     }
   }
 }
