@@ -11,10 +11,10 @@ namespace dotnet_mongodb
       // service.InsertData(service);
       var collectedData = service.ReadData();
 
-      // foreach(var data in collectedData)
-      // {
-      //   Console.WriteLine($"{data.FirstName} : {data.FirstName}");
-      // }
+      foreach(var data in collectedData)
+      {
+        Console.WriteLine($"{data.Id} : {data.FirstName} {data.LastName}");
+      }
 
       Console.WriteLine("GET DOWN TO IT");
     }
