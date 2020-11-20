@@ -9,12 +9,9 @@ namespace dotnet_mongodb
       CRUDService service = new CRUDService();
 
       // service.InsertData(service);
-      var collectedData = service.ReadData();
-
-      foreach(var data in collectedData)
-      {
-        Console.WriteLine($"{data.Id} : {data.FirstName} {data.LastName}");
-      }
+      // var collectedData = service.ReadData();
+      Person collectedPerson = service.ReadDataById(new Guid("b897f789-1b01-426b-b42c-068fbd93cb69"));
+      Console.WriteLine($"{collectedPerson.Id} : {collectedPerson.FirstName} {collectedPerson.LastName}");
 
       Console.WriteLine("GET DOWN TO IT");
     }

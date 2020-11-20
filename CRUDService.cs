@@ -34,7 +34,20 @@ namespace dotnet_mongodb
     public List<Person> ReadData()
     {
       var collection = database.Read<Person>("Persons");
+
+      foreach(var data in collection)
+      {
+        Console.WriteLine($"{data.Id} : {data.FirstName} {data.LastName}");
+      }
+
       return collection;
+    }
+
+    public Person ReadDataById(Guid id)
+    {
+      var dataCollected = database.ReadById<Person>("Persons", id);
+
+      return dataCollected;
     }
   }
 }
