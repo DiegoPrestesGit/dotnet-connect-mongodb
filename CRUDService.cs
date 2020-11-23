@@ -49,5 +49,10 @@ namespace dotnet_mongodb
 
       return dataCollected;
     }
+
+    public void UpsertData<T>(string table, Guid id, T data)
+    {
+      database.UpsertData(table, id, data);
+    }
   }
 }
