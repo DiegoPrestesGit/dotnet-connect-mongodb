@@ -54,5 +54,10 @@ namespace dotnet_mongodb
     {
       database.UpsertData(table, id, data);
     }
+
+    public void DeleteData<T>(string table, Guid id)
+    {
+      database.DeleteData<T>(table, id);
+    }
   }
 }
