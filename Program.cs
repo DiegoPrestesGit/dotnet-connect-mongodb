@@ -6,7 +6,7 @@ namespace dotnet_mongodb
   {
     static void Main(string[] args)
     {
-      CRUDService service = new CRUDService();
+      // CRUDService service = new CRUDService();
 
       // service.InsertData(service);
 
@@ -18,7 +18,7 @@ namespace dotnet_mongodb
       // service.UpsertData("Persons", new Guid("b897f789-1b01-426b-b42c-068fbd93cb69"), collectedPerson);
       // Console.WriteLine($"{collectedPerson.Id} : {collectedPerson.FirstName} {collectedPerson.LastName}, THIS ONE IS NEW");
       
-      service.DeleteData<Person>("Persons", new Guid("b897f789-1b01-426b-b42c-068fbd93cb69"));
+      // service.DeleteData<Person>("Persons", new Guid("b897f789-1b01-426b-b42c-068fbd93cb69"));
 
       Console.WriteLine("GET DOWN TO IT");
     }
